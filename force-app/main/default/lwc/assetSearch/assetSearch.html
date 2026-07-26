@@ -1,0 +1,57 @@
+<template>
+    <lightning-card title="Asset Search" icon-name="standard:search">
+        <div class="slds-var-m-around_medium">
+            <div class="slds-grid slds-gutters slds-grid_vertical-align-end slds-var-m-bottom_medium">
+                <div class="slds-col slds-size_1-of-1 slds-medium-size_6-of-12">
+                    <lightning-input
+                        type="search"
+                        label="Search Asset"
+                        placeholder="Search by Name, Number, Brand, Type..."
+                        value={searchTerm}
+                        onchange={handleInputChange}
+                        onkeyup={handleKeyUp}>
+                    </lightning-input>
+                </div>
+                <div class="slds-col slds-size_1-of-1 slds-medium-size_6-of-12 slds-var-m-top_small">
+                    <lightning-button
+                        label="Search"
+                        variant="brand"
+                        onclick={handleSearch}
+                        class="slds-var-m-right_x-small">
+                    </lightning-button>
+                    <lightning-button
+                        label="Reset"
+                        variant="neutral"
+                        onclick={handleReset}>
+                    </lightning-button>
+                </div>
+            </div>
+
+            <template if:true={isLoading}>
+                <div class="spinner-container">
+                    <lightning-spinner alternative-text="Loading..." size="medium"></lightning-spinner>
+                </div>
+            </template>
+
+            <template if:true={hasResults}>
+                <div class="slds-border_around">
+                    <lightning-datatable
+                        key-field="Id"
+                        data={assets}
+                        columns={columns}
+                        hide-checkbox-column>
+                    </lightning-datatable>
+                </div>
+            </template>
+
+            <template if:true={showEmptyState}>
+                <div class="slds-illustration slds-illustration_small slds-var-m-top_large">
+                    <div class="slds-text-heading_medium slds-text-color_weak">No Assets Found</div>
+                    <div class="slds-text-body_regular slds-text-color_weak">
+                        Try refining your search terms or search for something else.
+                    </div>
+                </div>
+            </template>
+        </div>
+    </lightning-card>
+</template>

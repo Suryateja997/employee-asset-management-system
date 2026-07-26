@@ -1,0 +1,67 @@
+<template>
+    <lightning-card title="Asset Assignment Wizard" icon-name="action:approval">
+        <div class="slds-var-m-around_medium">
+            <!-- Progress Steps -->
+            <lightning-progress-indicator current-step={currentStep} type="base" variant="base" class="slds-var-m-bottom_medium">
+                <lightning-progress-step label="Select Employee" value="1"></lightning-progress-step>
+                <lightning-progress-step label="Select Asset" value="2"></lightning-progress-step>
+                <lightning-progress-step label="Confirm" value="3"></lightning-progress-step>
+            </lightning-progress-indicator>
+
+            <!-- Step 1: Select Employee Custom Object -->
+            <template if:true={isStepOne}>
+                <div class="step-container">
+                    <lightning-record-picker
+                        label="Select Employee"
+                        placeholder="Search employee records..."
+                        object-api-name="Employee__c"
+                        value={selectedEmployeeId}
+                        onchange={handleEmployeeSelect}>
+                    </lightning-record-picker>
+                </div>
+            </template>
+
+            <!-- Step 2: Select Available Asset -->
+            <template if:true={isStepTwo}>
+                <div class="step-container">
+                    <div class="slds-text-title_caps slds-var-m-bottom_x-small">Available Assets</div>
+                    <template if:true={hasAvailableAssets}>
+                        <lightning-datatable
+                            key-field="Id"
+                            data={availableAssets}
+                            columns={columns}
+                            max-row-selection="1"
+                            onrowselection={handleAssetSelect}>
+                        </lightning-datatable>
+                    </template>
+                    <template if:false={hasAvailableAssets}>
+                        <p class="slds-text-color_weak">No available assets found to assign.</p>
+                    </template>
+                </div>
+            </template>
+
+            <!-- Step 3: Confirmation -->
+            <template if:true={isStepThree}>
+                <div class="step-container slds-box slds-theme_shade">
+                    <div class="slds-text-heading_small slds-var-m-bottom_small">Assignment Summary</div>
+                    <p><strong>Employee Record ID:</strong> {selectedEmployeeId}</p>
+                    <p><strong>Selected Asset:</strong> {selectedAssetName}</p>
+                    <p><strong>New Status:</strong> Assigned</p>
+                </div>
+            </template>
+
+            <!-- Navigation Controls -->
+            <div class="slds-var-m-top_medium slds-grid slds-grid_align-end">
+                <template if:true={showPrevious}>
+                    <lightning-button label="Previous" onclick={handlePrevious} class="slds-var-m-right_x-small"></lightning-button>
+                </template>
+                <template if:true={showNext}>
+                    <lightning-button label="Next" variant="brand" onclick={handleNext} disabled={isNextDisabled}></lightning-button>
+                </template>
+                <template if:true={isStepThree}>
+                    <lightning-button label="Assign Asset" variant="success" onclick={handleAssign} disabled={isSubmitting}></lightning-button>
+                </template>
+            </div>
+        </div>
+    </lightning-card>
+</template>

@@ -1,0 +1,48 @@
+.dashboard-card{
+    border-radius:12px;
+    padding:20px;
+    text-align:center;
+    color:white;
+    min-height:170px;
+    box-shadow:0 3px 10px rgba(0,0,0,.20);
+}
+
+.dashboard-card lightning-icon{
+    margin-bottom:15px;
+}
+
+.dashboard-card h2{
+    font-size:18px;
+    font-weight:600;
+    margin-top:10px;
+}
+
+.dashboard-card p{
+    font-size:34px;
+    font-weight:bold;
+    margin-top:20px;
+}
+
+.employees{
+    background:#0176d3;
+}
+
+.assets{
+    background:#2e844a;
+}
+
+.available{
+    background:#45c65a;
+}
+
+.assigned{
+    background:#ffb75d;
+}
+
+.repair{
+    background:#ba0517;
+}
+
+.requests{
+    background:#706e6b;
+}

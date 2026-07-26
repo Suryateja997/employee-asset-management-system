@@ -1,0 +1,60 @@
+<template>
+    <lightning-card title="Employee Asset Dashboard" icon-name="standard:user">
+        <div class="slds-var-m-around_medium">
+            <template if:true={isLoading}>
+                <div class="spinner-container">
+                    <lightning-spinner alternative-text="Loading dashboard..." size="medium"></lightning-spinner>
+                </div>
+            </template>
+
+            <template if:false={isLoading}>
+                <!-- Top Summary Metrics -->
+                <div class="slds-grid slds-gutters slds-var-m-bottom_medium">
+                    <div class="slds-col slds-size_1-of-2">
+                        <div class="metric-card slds-box slds-text-align_center">
+                            <span class="slds-text-heading_large">{totalAssets}</span>
+                            <div class="slds-text-title_caps">Assigned Assets</div>
+                        </div>
+                    </div>
+                    <div class="slds-col slds-size_1-of-2">
+                        <div class="metric-card slds-box slds-text-align_center">
+                            <span class="slds-text-heading_large">{openRequestsCount}</span>
+                            <div class="slds-text-title_caps">Open Maintenance Issues</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tabs Section -->
+                <lightning-tabset>
+                    <lightning-tab label="Assigned Assets">
+                        <template if:true={hasAssets}>
+                            <lightning-datatable
+                                key-field="Id"
+                                data={assignedAssets}
+                                columns={assetColumns}
+                                hide-checkbox-column>
+                            </lightning-datatable>
+                        </template>
+                        <template if:false={hasAssets}>
+                            <p class="slds-var-p-around_medium slds-text-color_weak">No assets currently assigned to this employee.</p>
+                        </template>
+                    </lightning-tab>
+
+                    <lightning-tab label="Maintenance Requests">
+                        <template if:true={hasRequests}>
+                            <lightning-datatable
+                                key-field="Id"
+                                data={maintenanceRequests}
+                                columns={requestColumns}
+                                hide-checkbox-column>
+                            </lightning-datatable>
+                        </template>
+                        <template if:false={hasRequests}>
+                            <p class="slds-var-p-around_medium slds-text-color_weak">No active maintenance requests.</p>
+                        </template>
+                    </lightning-tab>
+                </lightning-tabset>
+            </template>
+        </div>
+    </lightning-card>
+</template>

@@ -1,0 +1,48 @@
+.slds-card {
+    border-radius: 8px;
+}
+
+lightning-datatable {
+    margin-top: 1rem;
+}
+
+lightning-button {
+    margin-top: 1.5rem;
+}
+
+.table-header {
+    font-size: 18px;
+    font-weight: bold;
+    color: #16325c;
+}
+
+.search-section {
+    margin-bottom: 1rem;
+}
+
+.status-filter {
+    margin-top: 0.5rem;
+}
+
+.custom-card {
+    box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+    border-radius: 8px;
+}
+
+.slds-spinner_container {
+    position: relative;
+}
+
+@media only screen and (max-width: 768px) {
+
+    lightning-button {
+        width: 100%;
+        margin-top: 10px;
+    }
+
+    lightning-input,
+    lightning-combobox {
+        width: 100%;
+    }
+
+}

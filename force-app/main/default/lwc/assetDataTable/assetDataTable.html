@@ -1,0 +1,69 @@
+<template>
+
+    <lightning-card title="Company Assets" icon-name="standard:asset_object">
+
+        <div class="slds-p-around_medium">
+
+            <lightning-layout multiple-rows>
+
+                <lightning-layout-item size="6" padding="around-small">
+
+                    <lightning-input
+                        type="search"
+                        label="Search Assets"
+                        placeholder="Search by Name, Asset Number or Brand..."
+                        onchange={handleSearch}>
+                    </lightning-input>
+
+                </lightning-layout-item>
+
+                <lightning-layout-item size="3" padding="around-small">
+
+                    <lightning-combobox
+                        label="Status"
+                        value={selectedStatus}
+                        options={statusOptions}
+                        onchange={handleStatusChange}>
+                    </lightning-combobox>
+
+                </lightning-layout-item>
+
+                <lightning-layout-item size="3" padding="around-small">
+
+                    <lightning-button
+                        label="Refresh"
+                        variant="brand"
+                        onclick={refreshTable}>
+                    </lightning-button>
+
+                </lightning-layout-item>
+
+            </lightning-layout>
+
+            <template if:true={isLoading}>
+                <lightning-spinner></lightning-spinner>
+            </template>
+
+            <lightning-datatable
+
+                key-field="Id"
+
+                data={displayAssets}
+
+                columns={columns}
+
+                sorted-by={sortBy}
+
+                sorted-direction={sortDirection}
+
+                onsort={handleSort}
+
+                hide-checkbox-column>
+
+            </lightning-datatable>
+
+        </div>
+
+    </lightning-card>
+
+</template>

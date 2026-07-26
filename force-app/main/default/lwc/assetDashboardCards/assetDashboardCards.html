@@ -1,0 +1,74 @@
+<template>
+    <lightning-card title="Asset Management Dashboard" icon-name="standard:dashboard">
+        <div class="slds-p-around_medium">
+
+            <template if:true={isLoading}>
+                <lightning-spinner
+                    alternative-text="Loading Dashboard"
+                    size="medium">
+                </lightning-spinner>
+            </template>
+
+            <template if:false={isLoading}>
+                <div class="slds-grid slds-wrap">
+
+                    <!-- Total Employees -->
+                    <div class="slds-col slds-size_1-of-1 slds-medium-size_1-of-2 slds-large-size_1-of-3 slds-p-around_small">
+                        <div class="dashboard-card employees">
+                            <lightning-icon icon-name="standard:people" size="small"></lightning-icon>
+                            <h2>Total Employees</h2>
+                            <p>{dashboard.totalEmployees}</p>
+                        </div>
+                    </div>
+
+                    <!-- Total Assets -->
+                    <div class="slds-col slds-size_1-of-1 slds-medium-size_1-of-2 slds-large-size_1-of-3 slds-p-around_small">
+                        <div class="dashboard-card assets">
+                            <lightning-icon icon-name="standard:asset_object" size="small"></lightning-icon>
+                            <h2>Total Assets</h2>
+                            <p>{dashboard.totalAssets}</p>
+                        </div>
+                    </div>
+
+                    <!-- Available Assets -->
+                    <div class="slds-col slds-size_1-of-1 slds-medium-size_1-of-2 slds-large-size_1-of-3 slds-p-around_small">
+                        <div class="dashboard-card available">
+                            <lightning-icon icon-name="utility:check" size="small"></lightning-icon>
+                            <h2>Available Assets</h2>
+                            <p>{dashboard.availableAssets}</p>
+                        </div>
+                    </div>
+
+                    <!-- Assigned Assets -->
+                    <div class="slds-col slds-size_1-of-1 slds-medium-size_1-of-2 slds-large-size_1-of-3 slds-p-around_small">
+                        <div class="dashboard-card assigned">
+                            <lightning-icon icon-name="utility:user" size="small"></lightning-icon>
+                            <h2>Assigned Assets</h2>
+                            <p>{dashboard.assignedAssets}</p>
+                        </div>
+                    </div>
+
+                    <!-- Repair Assets -->
+                    <div class="slds-col slds-size_1-of-1 slds-medium-size_1-of-2 slds-large-size_1-of-3 slds-p-around_small">
+                        <div class="dashboard-card repair">
+                            <lightning-icon icon-name="utility:warning" size="small"></lightning-icon>
+                            <h2>Under Repair</h2>
+                            <p>{dashboard.repairAssets}</p>
+                        </div>
+                    </div>
+
+                    <!-- Open Requests -->
+                    <div class="slds-col slds-size_1-of-1 slds-medium-size_1-of-2 slds-large-size_1-of-3 slds-p-around_small">
+                        <div class="dashboard-card requests">
+                            <lightning-icon icon-name="standard:case" size="small"></lightning-icon>
+                            <h2>Open Requests</h2>
+                            <p>{dashboard.openRequests}</p>
+                        </div>
+                    </div>
+
+                </div>
+            </template>
+
+        </div>
+    </lightning-card>
+</template>

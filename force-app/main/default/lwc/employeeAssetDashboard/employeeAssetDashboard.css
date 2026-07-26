@@ -1,0 +1,9 @@
+.spinner-container {
+    position: relative;
+    height: 8rem;
+}
+
+.metric-card {
+    background-color: #f3f3f3;
+    border-radius: 6px;
+}
