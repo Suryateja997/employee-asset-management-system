@@ -181,3 +181,79 @@ Screenshots of the application will be added here.
 
 ⭐ If you find this project useful, feel free to explore and learn.
 
+
+
+# 🏗️ Salesforce Architecture
+
+## Data Model
+
+
+            Employee
+                |
+                |
+                |
+      Asset Assignment
+                |
+      -----------------
+      |               |
+      |               |
+ Company Asset   Maintenance Request
+
+
+---
+
+## Automation Layer
+
+
+            Salesforce Flow
+
+                  |
+                  |
+
+  --------------------------------
+  |              |               |
+
+Asset Assigned Asset Return Maintenance
+ |
+  |
+
+Update Asset Status Automatically
+
+---
+
+## Application Layer
+
+
+            Users
+
+               |
+               |
+
+      Lightning Experience
+
+               |
+    -------------------------
+    |                       |
+   LWC                   Reports
+    |
+    |
+
+Apex Controllers
+|
+|
+Salesforce Objects
+
+---
+
+## Technology Architecture
+
+
+Frontend
+Lightning Web Components (LWC)
+Backend
+Apex Classes
+SOQL
+Automation
+Record Triggered Flows
+Database
+Salesforce Custom Objects
