@@ -194,22 +194,82 @@ EmployeeAssetManagement
 
 # 📦 Deployment
 
-Clone repository:
 
+Deployment Guide
 
+## Prerequisites
+
+Before deploying this project, install:
+
+- Salesforce CLI
+- Visual Studio Code
+- Salesforce Extension Pack
+- Git
+
+## Step 1: Clone Repository
+
+Clone the repository:
+
+```bash
 git clone https://github.com/Suryateja997/employee-asset-management-system.git
+````
 
-Authorize Salesforce Org:
+Move into project folder:
 
+```bash
+cd employee-asset-management-system
+```
 
+## Step 2: Authorize Salesforce Org
+
+Login to Salesforce:
+
+```bash
 sf org login web
+```
 
-Deploy source:
+## Step 3: Check Salesforce Connection
 
+Verify authorized org:
 
+```bash
+sf org list
+```
+
+## Step 4: Deploy Project
+
+Deploy Salesforce metadata:
+
+```bash
 sf project deploy start
+```
 
----
+## Step 5: Run Apex Tests
+
+Run tests:
+
+```bash
+sf apex run test
+```
+
+## Step 6: Open Salesforce Org
+
+Open Salesforce:
+
+```bash
+sf org open
+```
+
+# 🔮 Future Enhancements
+
+* Employee self-service portal
+* Mobile application support
+* Email notifications for maintenance
+* QR code based asset tracking
+* Advanced analytics dashboards
+* Integration with external inventory systems
+
+```
 
 # 👨‍💻 Developer
 
