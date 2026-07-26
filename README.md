@@ -257,3 +257,58 @@ Automation
 Record Triggered Flows
 Database
 Salesforce Custom Objects
+
+
+# 📸 Application Screenshots
+
+## 1. Application Home Page
+
+![Application Home](screenshots/01-app-home.png)
+
+---
+
+## 2. Employee Management
+
+![Employee Record](screenshots/02-employee-record.png)
+
+---
+
+## 3. Company Asset Management
+
+![Company Asset](screenshots/03-company-asset-record.png)
+
+---
+
+## 4. Asset Assignment
+
+![Asset Assignment](screenshots/04-asset-assignment-record.png)
+
+---
+
+## 5. Maintenance Request
+
+![Maintenance Request](screenshots/05-maintenance-request.png)
+
+---
+
+## 6. Salesforce Flow Automation
+
+![Asset Status Flow](screenshots/06-asset-status-flow.png)
+
+---
+
+## 7. Lightning Web Components
+
+![LWC Dashboard](screenshots/07-lwc-dashboard.png)
+
+---
+
+## 8. Reports and Dashboards
+
+![Reports Dashboard](screenshots/08-reports-dashboard.png)
+
+---
+
+## 9. Security and Permissions
+
+![Permission Settings](screenshots/09-permission-settings.png)
