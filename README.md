@@ -1,10 +1,20 @@
 # Employee Asset Management System
 
-## 📌 Project Overview
+A Salesforce-based application designed to manage company assets, employee assignments, asset maintenance, and complete asset lifecycle tracking.
 
-Employee Asset Management System is a Salesforce-based application designed to manage company assets, employee assignments, asset maintenance, and asset lifecycle tracking.
+---
 
-The system helps organizations efficiently track laptops, mobile devices, monitors, software licenses, and other company assets while improving visibility and automation.
+# 📌 Project Overview
+
+Employee Asset Management System helps organizations efficiently manage company assets such as:
+
+- Laptops
+- Mobile Devices
+- Monitors
+- Software Licenses
+- Other company equipment
+
+The system provides better visibility, automation, and tracking of asset ownership.
 
 ---
 
@@ -20,18 +30,20 @@ The system helps organizations efficiently track laptops, mobile devices, monito
 
 ## 💻 Asset Management
 
-- Maintain company asset inventory
-- Track asset information:
-  - Asset Name
-  - Asset Number
-  - Asset Type
-  - Brand
-  - Model
-  - Purchase Details
-  - Warranty Information
-  - Current Status
+Maintain company asset inventory.
 
-Asset Status Tracking:
+Track:
+
+- Asset Name
+- Asset Number
+- Asset Type
+- Brand
+- Model
+- Purchase Details
+- Warranty Information
+- Current Status
+
+### Asset Status Tracking
 
 - Available
 - Assigned
@@ -92,20 +104,50 @@ Custom Lightning Web Components developed:
 
 # 🏗️ Salesforce Architecture
 
+## Data Model
+
+
 Employee
- |
- |
- Asset Assignment
- |
- |
- Company Asset
- |
- |
- Maintenance Request
-Automation Layer:
- Flows + Apex
-User Interface:
- Lightning Web Components
+|
+|
+Asset Assignment
+|
+|----------------|
+| |
+Company Asset Maintenance Request
+
+---
+
+## Automation Layer
+
+
+Salesforce Flow
+|
+|
+|
+Asset Assignment
+Asset Return
+Maintenance Request
+|
+|
+Update Asset Status Automatically
+
+---
+
+## Application Layer
+
+
+Users
+|
+|
+Lightning Experience
+|
+| |
+LWC Components Reports & Dashboards
+|
+Apex Controllers
+|
+Salesforce Objects
 
 ---
 
@@ -126,32 +168,44 @@ User Interface:
 
 # 📂 Project Structure
 
-force-app
- └── main
- └── default
- ├── classes
- ├── lwc
- ├── objects
- ├── flows
- └── permissionsets
-config
- scripts
- sfdx-project.json
- package.json
+
+EmployeeAssetManagement
+│
+├── force-app
+│ └── main
+│ └── default
+│ ├── classes
+│ ├── lwc
+│ ├── objects
+│ ├── flows
+│ └── permissionsets
+│
+├── screenshots
+│
+├── config
+│
+├── scripts
+│
+├── package.json
+│
+└── sfdx-project.json
 
 ---
 
 # 📦 Deployment
 
-Clone the repository:
+Clone repository:
+
 
 git clone https://github.com/Suryateja997/employee-asset-management-system.git
 
-Authorize Salesforce org:
+Authorize Salesforce Org:
+
 
 sf org login web
 
 Deploy source:
+
 
 sf project deploy start
 
@@ -161,7 +215,8 @@ sf project deploy start
 
 **Surya Teja**
 
-Salesforce Developer  
+Salesforce Developer
+
 Skills:
 
 - Salesforce Administration
@@ -173,104 +228,49 @@ Skills:
 
 ---
 
-# 📸 Screenshots
+# 📸 Application Screenshots
 
-Screenshots of the application will be added here.
+
+## 1. Application Home
+
+![Application Home](screenshots/01-app-home.png)
+
+
+## 2. Employee Record
+
+![Employee Record](screenshots/02-employee-record.png)
+
+
+## 3. Company Asset
+
+![Company Asset](screenshots/03-company-asset-record.png)
+
+
+## 4. Asset Assignment
+
+![Asset Assignment](screenshots/04-asset-assignment-record.png)
+
+
+## 5. Maintenance Request
+
+![Maintenance Request](screenshots/05-maintenance-request.png)
+
+
+## 6. Asset Status Flow
+
+![Asset Status Flow](screenshots/06-asset-status-flow.png)
+
+
+## 7. Lightning Web Components
+
+![LWC Dashboard](screenshots/07-lwc-dashboard.png)
+
+
+## 8. Dashboard
+
+![Dashboard](screenshots/08-dashboard.png)
+
 
 ---
 
 ⭐ If you find this project useful, feel free to explore and learn.
-
-
-
-# 🏗️ Salesforce Architecture
-
-## Data Model
-
-
-            Employee
-                |
-                |
-                |
-      Asset Assignment
-                |
-      -----------------
-      |               |
-      |               |
- Company Asset   Maintenance Request
-
-
----
-
-## Automation Layer
-
-
-            Salesforce Flow
-
-                  |
-                  |
-
-  --------------------------------
-  |              |               |
-
-Asset Assigned Asset Return Maintenance
- |
-  |
-
-Update Asset Status Automatically
-
----
-
-## Application Layer
-
-
-            Users
-
-               |
-               |
-
-      Lightning Experience
-
-               |
-    -------------------------
-    |                       |
-   LWC                   Reports
-    |
-    |
-
-Apex Controllers
-|
-|
-Salesforce Objects
-
----
-
-## Technology Architecture
-
-
-Frontend
-Lightning Web Components (LWC)
-Backend
-Apex Classes
-SOQL
-Automation
-Record Triggered Flows
-Database
-Salesforce Custom Objects
-
-
-![Application Home](screenshots/01-app-home.png)
-
-![Employee Record](screenshots/02-employee-record.png)
-
-![Company Asset](screenshots/03-company-asset-record.png)
-
-![Asset Assignment](screenshots/04-asset-assignment-record.png)
-
-![Maintenance Request](screenshots/05-maintenance-request.png)
-
-![Asset Status Flow](screenshots/06-asset-status-flow.png)
-
-![LWC Dashboard](screenshots/07-lwc-dashboard.png)
-
-![Dashboard](screenshots/08-dashboard.png)
