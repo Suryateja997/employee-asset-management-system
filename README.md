@@ -1,371 +1,183 @@
-# 🚀 Employee Asset Management System
+# Employee Asset Management System
 
-A Salesforce-based Employee Asset Management System developed using **Salesforce Administration**, **Apex**, **Lightning Web Components (LWC)**, **Flows**, **Reports**, and **Dashboards**.
+## 📌 Project Overview
 
-This application helps organizations manage company assets, assign them to employees, track maintenance requests, and monitor asset availability through a modern Lightning interface.
+Employee Asset Management System is a Salesforce-based application designed to manage company assets, employee assignments, asset maintenance, and asset lifecycle tracking.
 
----
-
-# 📋 Project Overview
-
-The Employee Asset Management System is designed to simplify the tracking and management of company-owned assets such as laptops, mobiles, monitors, printers, software licenses, and more.
-
-The application provides:
-
-- Employee Management
-- Company Asset Management
-- Asset Assignment
-- Maintenance Tracking
-- Lightning Dashboard
-- Asset Search
-- Reports & Dashboards
-- Automation using Flows
+The system helps organizations efficiently track laptops, mobile devices, monitors, software licenses, and other company assets while improving visibility and automation.
 
 ---
 
-# 🛠 Technologies Used
+# 🚀 Features
 
-- Salesforce CRM
-- Salesforce DX
-- Apex
+## 👨‍💼 Employee Management
+
+- Create and manage employee records
+- Store employee details
+- Track department, designation, and employment status
+
+---
+
+## 💻 Asset Management
+
+- Maintain company asset inventory
+- Track asset information:
+  - Asset Name
+  - Asset Number
+  - Asset Type
+  - Brand
+  - Model
+  - Purchase Details
+  - Warranty Information
+  - Current Status
+
+Asset Status Tracking:
+
+- Available
+- Assigned
+- Repair
+- Lost
+- Retired
+
+---
+
+## 🔄 Asset Assignment Management
+
+- Assign assets to employees
+- Maintain assignment history
+- Track assigned date and return date
+- Monitor asset ownership
+
+---
+
+## 🛠 Maintenance Management
+
+- Create maintenance requests
+- Track repair status
+- Assign technicians
+- Maintain asset service history
+
+---
+
+# ⚙️ Salesforce Automation
+
+Implemented automation using:
+
+- Record Triggered Flows
+- Apex Logic
+
+Automation Examples:
+
+✅ Automatically update asset status when assigned
+
+✅ Change asset status when returned
+
+✅ Move assets to repair status during maintenance
+
+✅ Update asset availability after repair completion
+
+---
+
+# 💻 Lightning Web Components (LWC)
+
+Custom Lightning Web Components developed:
+
+- Asset Search Component
+- Asset Dashboard Cards
+- Asset Data Table
+- Employee Asset Dashboard
+- Asset Assignment Wizard
+
+---
+
+# 🏗️ Salesforce Architecture
+
+Employee
+ |
+ |
+ Asset Assignment
+ |
+ |
+ Company Asset
+ |
+ |
+ Maintenance Request
+Automation Layer:
+ Flows + Apex
+User Interface:
+ Lightning Web Components
+
+---
+
+# 🛠️ Technologies Used
+
+| Technology | Usage |
+|---|---|
+| Salesforce Platform | Application Development |
+| Salesforce DX | Project Structure |
+| Apex | Backend Logic |
+| SOQL | Data Queries |
+| Lightning Web Components | User Interface |
+| Salesforce Flows | Automation |
+| Git | Version Control |
+| GitHub | Source Management |
+
+---
+
+# 📂 Project Structure
+
+force-app
+ └── main
+ └── default
+ ├── classes
+ ├── lwc
+ ├── objects
+ ├── flows
+ └── permissionsets
+config
+ scripts
+ sfdx-project.json
+ package.json
+
+---
+
+# 📦 Deployment
+
+Clone the repository:
+
+git clone https://github.com/Suryateja997/employee-asset-management-system.git
+
+Authorize Salesforce org:
+
+sf org login web
+
+Deploy source:
+
+sf project deploy start
+
+---
+
+# 👨‍💻 Developer
+
+**Surya Teja**
+
+Salesforce Developer  
+Skills:
+
+- Salesforce Administration
+- Apex Development
+- Lightning Web Components
+- Salesforce Automation
 - SOQL
-- Lightning Web Components (LWC)
-- Salesforce Flow
-- Validation Rules
-- Reports
-- Dashboards
-- VS Code
-- Salesforce CLI
-- Git
-- GitHub
-
----
-
-# 📦 Custom Objects
-
-## Employee
-
-Stores employee information.
-
-### Fields
-
-- Employee Number
-- Employee Name
-- Email
-- Phone
-- Department
-- Designation
-- Joining Date
-- Status
-- Address
-
----
-
-## Company Asset
-
-Stores company-owned assets.
-
-### Fields
-
-- Asset Number
-- Asset Name
-- Asset Type
-- Brand
-- Model
-- Serial Number
-- Purchase Date
-- Warranty End Date
-- Cost
-- Status
-- Location
-- Vendor
-- Assigned To
-
----
-
-## Asset Assignment
-
-Tracks asset allocation history.
-
-### Fields
-
-- Employee
-- Asset
-- Assignment Date
-- Return Date
-- Assignment Status
-
----
-
-## Maintenance Request
-
-Tracks maintenance requests.
-
-### Fields
-
-- Company Asset
-- Issue Description
-- Priority
-- Status
-- Technician
-- Request Date
-- Completion Date
-
----
-
-# 💻 Apex Components
-
-## AssetManagementService.cls
-
-Provides backend business logic.
-
-Methods included:
-
-- searchAssets()
-- getAvailableAssets()
-- assignAssetToEmployee()
-- getEmployeeDashboardData()
-
----
-
-# ⚡ Lightning Web Components
-
-### Asset Search
-
-Search company assets using:
-
-- Asset Name
-- Asset Number
-
----
-
-### Asset Dashboard Cards
-
-Displays:
-
-- Total Employees
-- Total Assets
-- Available Assets
-- Assigned Assets
-- Repair Assets
-- Open Maintenance Requests
-
----
-
-### Asset Data Table
-
-Interactive data table with:
-
-- Search
-- Sorting
-- Refresh
-- Lightning Datatable
-
----
-
-### Employee Asset Dashboard
-
-Displays:
-
-- Assigned Assets
-- Maintenance Requests
-
-for each employee.
-
----
-
-### Asset Assignment Wizard
-
-Guided asset assignment process.
-
----
-
-# 🔄 Automation
-
-Implemented using Record Triggered Flows.
-
-### Flow 1
-
-Assign Asset
-
-Automatically changes asset status to:
-
-Assigned
-
----
-
-### Flow 2
-
-Return Asset
-
-Automatically changes asset status to:
-
-Available
-
----
-
-### Flow 3
-
-Maintenance Request Created
-
-Automatically changes asset status to:
-
-Repair
-
----
-
-### Flow 4
-
-Maintenance Completed
-
-Automatically changes asset status back to:
-
-Available
-
----
-
-# ✅ Validation Rules
-
-Implemented validations for:
-
-- Warranty Date
-- Assignment Date
-- Return Date
-- Required fields
-
----
-
-# 📊 Reports
-
-Created reports for:
-
-- Employee Assets
-- Available Assets
-- Assigned Assets
-- Maintenance Requests
-
----
-
-# 📈 Dashboards
-
-Dashboard includes:
-
-- Employee Count
-- Asset Count
-- Available Assets
-- Assigned Assets
-- Repair Assets
-- Open Maintenance Requests
-
----
-
-# 🏗 Project Architecture
-
-```
-                    Employee Asset Management System
-
-                        Lightning App
-                              │
-      ┌───────────────────────┼───────────────────────┐
-      │                       │                       │
-      ▼                       ▼                       ▼
- Asset Search         Dashboard Cards        Asset Data Table
-      │                       │                       │
-      └────────────── Apex Service ───────────────────┘
-                              │
-      ┌───────────────────────┼───────────────────────┐
-      ▼                       ▼                       ▼
- Employee__c          Company_Asset__c      Maintenance_Request__c
-                              │
-                              ▼
-                     Asset Assignment
-```
-
----
-
-# 📁 Project Structure
-
-```
-EmployeeAssetManagement
-│
-├── force-app
-│   └── main
-│       └── default
-│           ├── classes
-│           │      AssetManagementService.cls
-│           │
-│           ├── lwc
-│           │      assetSearch
-│           │      assetDashboardCards
-│           │      assetDataTable
-│           │      assetAssignmentWizard
-│           │      employeeAssetDashboard
-│           │
-│           ├── objects
-│           ├── flows
-│           ├── reports
-│           └── dashboards
-│
-├── manifest
-├── README.md
-└── sfdx-project.json
-```
+- Git & GitHub
 
 ---
 
 # 📸 Screenshots
 
-Add screenshots here after deployment.
-
-- Home Dashboard
-- Asset Search
-- Asset Dashboard Cards
-- Asset Assignment Wizard
-- Employee Dashboard
-- Asset Data Table
-- Reports
-- Dashboards
+Screenshots of the application will be added here.
 
 ---
 
-# 🚀 Future Enhancements
+⭐ If you find this project useful, feel free to explore and learn.
 
-- Barcode / QR Code Support
-- Email Notifications
-- Scheduled Maintenance
-- Mobile Optimization
-- Experience Cloud Portal
-- Approval Process
-- Asset Reservation
-- Analytics Dashboard
-
----
-
-# 👨‍💻 Skills Demonstrated
-
-- Salesforce Administration
-- Apex Programming
-- SOQL
-- Lightning Web Components (LWC)
-- Salesforce Flow
-- Validation Rules
-- Reports & Dashboards
-- VS Code
-- Salesforce CLI
-- Git & GitHub
-
----
-
-# 📌 Resume Description
-
-Developed a Salesforce-based Employee Asset Management System using Apex, Lightning Web Components (LWC), SOQL, Flows, Validation Rules, Reports, and Dashboards. The application manages company assets, employee assignments, maintenance requests, and provides interactive dashboards and search capabilities to improve operational efficiency.
-
----
-
-# 📄 License
-
-This project is developed for learning and portfolio purposes.
-
----
-
-## ⭐ If you found this project useful, consider giving it a star on GitHub.
